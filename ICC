@@ -1,0 +1,30 @@
+#NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
+; #Warn  ; Enable warnings to assist with detecting common errors.
+SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
+SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
+
+
+
+
+F10::
+
+inputbox, var01, Send Icp
+If ErrorLevel = 1 
+                return
+IfLessOrEqual, var01, 5
+	var02 = 1.5
+IfGreater, var01, 5
+	IfLessOrEqual, var, 10
+		var02 = 1.7
+IfGreater, var01, 10	
+	IfLessOrEqual, var, 20
+	var02 = 2
+IfGreater, var01, 20
+	IfLessOrEqual, var, 50
+		var02 = 2.1
+IfGreater, var01, 50
+	var02 = 2.2
+SetFormat, float, 4.2
+var03 := var02*var01
+sendinput Icp <%var01%kA / Ipk <%var03%kA
+return
