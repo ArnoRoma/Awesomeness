@@ -1,0 +1,13 @@
+F1::
+send, ^c
+Return
+
+;
+F2::
+send, ^v
+Return
+
+;
+F3::
+send, ^a
+Return
